@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import Person from '../components/Person'
+import Person from '/Users/tuvalsimha/FoodTruck/components/person.js'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
