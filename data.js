@@ -44,5 +44,14 @@ export const truckOwners = [
     fav_drink: 'Coffee',
     city: 'K-8',
   },
+  {
+    id: '6',
+    name: 'Tal Bola',
+    height: '165',
+    weight: '50',
+    fav_food: 'Pizza + Hamburger',
+    fav_drink: 'Food!',
+    city: 'Eilat',
+  },
 
 ]
