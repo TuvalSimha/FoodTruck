@@ -4,7 +4,7 @@ import Person from '/Users/tuvalsimha/FoodTruck/components/person.js'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Index() {
-  const { data, error } = useSWR('/api/people', fetcher)
+  const { data, error } = useSWR('/api/truckOwners', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
