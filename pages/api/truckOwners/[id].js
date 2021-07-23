@@ -1,4 +1,4 @@
-import { truckOwners } from '/Users/tuvalsimha/FoodTruck/data.js'
+import { truckOwners } from '../../../data'
 
 export default function personHandler({ query: { id } }, res) {
   const filtered = truckOwners.filter((p) => p.id === id)
