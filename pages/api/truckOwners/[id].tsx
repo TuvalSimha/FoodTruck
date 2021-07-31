@@ -1,12 +1,12 @@
-import { truckOwners } from '../../../data'
+import { truckOwners } from "@lib/data";
 
 export default function personHandler({ query: { id } }, res) {
-  const filtered = truckOwners.filter((p) => p.id === id)
+  const filtered = truckOwners.filter((p) => p.id === id);
 
   // User with id exists
   if (filtered.length > 0) {
-    res.status(200).json(filtered[0])
+    res.status(200).json(filtered[0]);
   } else {
-    res.status(404).json({ message: `User with id: ${id} not found.` })
+    res.status(404).json({ message: `User with id: ${id} not found.` });
   }
 }

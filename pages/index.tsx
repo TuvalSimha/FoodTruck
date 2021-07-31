@@ -1,22 +1,16 @@
-import useSWR from 'swr'
-//import Person from '/Users/tuvalsimha/FoodTruck/components/person.js'
+import { AppLayout } from "components/app-layout";
+import { PlacesList } from "components/places-list";
+import dynamic from "next/dynamic";
 
-import Person from '../components/person'
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const PlacesMap = dynamic(() => import("components/places-map"), {
+  loading: () => <p>A map is loading</p>,
+  ssr: false,
+});
 
 export default function Index() {
-  const localApiPath = '/api/truckOwners';
-  const { data, error } = useSWR(localApiPath, fetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
   return (
-    <ul>
-      {data.map((p, i) => (
-        <Person key={i} person={p} />
-      ))}
-    </ul>
-  )
+    <AppLayout sideComponent={<PlacesList />}>
+      <PlacesMap />
+    </AppLayout>
+  );
 }
