@@ -9,7 +9,7 @@ export const AppLayout: React.FC<{
       <Box flexShrink={0} height={"100%"}>
         {props.children}
       </Box>
-      {props.sideComponent ? <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }} w="300px">{props.sideComponent}</Box> : null}
+      {props.sideComponent ? <Box  w="300px">{props.sideComponent}</Box> : null}
     </Flex>
   );
 };
