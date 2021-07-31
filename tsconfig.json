@@ -21,6 +21,7 @@
     "paths": {
       "@lib/*": ["./lib/*.ts"],
       "@shared/*": ["./shared/*.ts"],
+      "@components/*": ["./components/*.ts"]
     }
   },
   "include": [
