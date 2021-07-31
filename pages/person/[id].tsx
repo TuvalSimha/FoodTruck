@@ -1,25 +1,26 @@
-import { useRouter } from 'next/router'
-import useSWR from 'swr'
+import { Person } from "@shared/models";
+import { useRouter } from "next/router";
+import useSWR from "swr";
 
 const fetcher = async (url) => {
-  const res = await fetch(url)
-  const data = await res.json()
+  const res = await fetch(url);
+  const data = await res.json();
 
   if (res.status !== 200) {
-    throw new Error(data.message)
+    throw new Error(data.message);
   }
-  return data
-}
+  return data;
+};
 
-export default function Person() {
-  const { query } = useRouter()
-  const { data, error } = useSWR(
+export default function PersonItem() {
+  const { query } = useRouter();
+  const { data, error } = useSWR<Person>(
     () => query.id && `/api/truckOwners/${query.id}`,
     fetcher
-  )
+  );
 
-  if (error) return <div>{error.message}</div>
-  if (!data) return <div>Loading...</div>
+  if (error) return <div>{error.message}</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <table>
@@ -44,5 +45,5 @@ export default function Person() {
         </tr>
       </tbody>
     </table>
-  )
+  );
 }

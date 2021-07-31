@@ -1,5 +1,5 @@
-import { truckOwners } from '../../../data'
+import { truckOwners } from "@lib/data";
 
 export default function handler(req, res) {
-  res.status(200).json(truckOwners)
+  res.status(200).json(truckOwners);
 }

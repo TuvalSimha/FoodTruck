@@ -1,22 +1,21 @@
-import useSWR from 'swr'
-//import Person from '/Users/tuvalsimha/FoodTruck/components/person.js'
+import { Person } from "@shared/models";
+import useSWR from "swr";
+import PersonComponent from "../components/person";
 
-import Person from '../components/person'
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
-  const localApiPath = '/api/truckOwners';
-  const { data, error } = useSWR(localApiPath, fetcher)
+  const localApiPath = "/api/truckOwners";
+  const { data, error } = useSWR<Person[]>(localApiPath, fetcher);
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <ul>
       {data.map((p, i) => (
-        <Person key={i} person={p} />
+        <PersonComponent key={i} person={p} />
       ))}
     </ul>
-  )
+  );
 }
