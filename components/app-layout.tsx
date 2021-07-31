@@ -6,11 +6,12 @@ export const AppLayout: React.FC<{
 }> = (props) => {
   return (
     <Flex height={"100%"}>
-      <Box flexShrink={0} height={"100%"}>
+      <Box flex="1" height={"100%"}>
         {props.children}
       </Box>
-      {props.sideComponent ? <Box  w="300px">{props.sideComponent}</Box> : null}
+      {props.sideComponent ? <Box w="300px">{props.sideComponent}</Box> : null}
     </Flex>
   );
 };
+
 
