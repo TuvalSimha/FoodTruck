@@ -21,7 +21,6 @@ export default function PlacesMap() {
       containerStyle={{
         height: "100%",
         width: "100%",
-        order: 1,
       }}
     >
       <Marker coordinates={[34.84455730231234, 32.06210893248879]}>

@@ -1,5 +1,6 @@
 import { AppLayout } from "components/app-layout";
 import { PlacesList } from "components/places-list";
+import { SearchBox } from "components/search";
 import dynamic from "next/dynamic";
 
 const PlacesMap = dynamic(() => import("components/places-map"), {
@@ -10,6 +11,7 @@ const PlacesMap = dynamic(() => import("components/places-map"), {
 export default function Index() {
   return (
     <AppLayout sideComponent={<PlacesList />}>
+      <SearchBox />
       <PlacesMap />
     </AppLayout>
   );
