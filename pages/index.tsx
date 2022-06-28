@@ -11,6 +11,6 @@ export default function Index() {
   return (
     <AppLayout sideComponent={<PlacesList />}>
       <PlacesMap />
-    </AppLayout>ddd
+    </AppLayout>
   );
 }
