@@ -10,7 +10,7 @@ const PlacesMap = dynamic(() => import("components/places-map"), {
 export default function Index() {
   return (
     <AppLayout sideComponent={<PlacesList />}>
-      <PlacesMap />
+      <PlacesMap />ssss
     </AppLayout>
   );
 }
